@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 12 Nov 2023 09:21:11 GMT</lastBuildDate><item><title><![CDATA[No title]]></title><description><![CDATA[#공부 #기획 #PM 지난 주, User Story와 AC에 관해 이야기 하면서 AC는 결국 프레임워크 중 하나이고, PRD는 초기 기획서와 같다. 따라서, 초안으로서 PRD…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/PM Study/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/PM Study/</guid><content:encoded>&lt;p&gt;#공부 #기획 #PM&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog RSS Feed]]></title><description><![CDATA[모든 것을 위해 쓰는 블로그]]></description><link>https://jundolee.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Mon, 13 Nov 2023 13:08:06 GMT</lastBuildDate><item><title><![CDATA[No title]]></title><description><![CDATA[#공부 #기획 #PM 지난 주, User Story와 AC에 관해 이야기 하면서 AC는 결국 프레임워크 중 하나이고, PRD는 초기 기획서와 같다. 따라서, 초안으로서 PRD…]]></description><link>https://jundolee.github.io/PM Study/</link><guid isPermaLink="false">https://jundolee.github.io/PM Study/</guid><content:encoded>&lt;p&gt;#공부 #기획 #PM&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;지난 주, User Story와 AC에 관해 이야기 하면서 AC는 결국 프레임워크 중 하나이고, PRD는 초기 기획서와 같다. 따라서, 초안으로서 PRD는 아주 중요하다.&lt;/li&gt;
 &lt;li&gt;문제를 단순화시키는 것에서 시작하여 문제 정의가 간단해지고, 우선 순위를 설정할 수 있다.&lt;/li&gt;
@@ -115,7 +115,7 @@
 &lt;li&gt;다양한 세상 :&lt;/li&gt;
 &lt;/ol&gt;
 &lt;/li&gt;
-&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[테스팅]]></title><description><![CDATA[헤더1 헤더2 헤더3 헤더4 헤더5 구분선 불릿 불릿 테스트 불릿 테스트 인용 인용 테스트 이미지 삽입]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/테스트/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/테스트/</guid><pubDate>Sun, 28 May 2023 22:40:32 GMT</pubDate><content:encoded>&lt;h1&gt;헤더1&lt;/h1&gt;
+&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[테스팅]]></title><description><![CDATA[헤더1 헤더2 헤더3 헤더4 헤더5 구분선 불릿 불릿 테스트 불릿 테스트 인용 인용 테스트 이미지 삽입]]></description><link>https://jundolee.github.io/테스트/</link><guid isPermaLink="false">https://jundolee.github.io/테스트/</guid><pubDate>Sun, 28 May 2023 22:40:32 GMT</pubDate><content:encoded>&lt;h1&gt;헤더1&lt;/h1&gt;
 &lt;h2&gt;헤더2&lt;/h2&gt;
 &lt;h3&gt;헤더3&lt;/h3&gt;
 &lt;h4&gt;헤더4&lt;/h4&gt;
@@ -169,7 +169,7 @@
       /&gt;
   &lt;/a&gt;
     &lt;/span&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[New Beginnings]]></title><description><![CDATA[Far far away, behind the word mountains, far from the countries Vokalia and
-Consonantia, there live the blind texts. Separated they live in…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/new-beginnings/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/new-beginnings/</guid><pubDate>Thu, 28 May 2015 22:40:32 GMT</pubDate><content:encoded>&lt;p&gt;Far far away, behind the word mountains, far from the countries Vokalia and
+Consonantia, there live the blind texts. Separated they live in…]]></description><link>https://jundolee.github.io/new-beginnings/</link><guid isPermaLink="false">https://jundolee.github.io/new-beginnings/</guid><pubDate>Thu, 28 May 2015 22:40:32 GMT</pubDate><content:encoded>&lt;p&gt;Far far away, behind the word mountains, far from the countries Vokalia and
 Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
 right at the coast of the Semantics, a large language ocean. A small river named
 Duden flows by their place and supplies it with the necessary regelialia.&lt;/p&gt;
@@ -261,12 +261,12 @@ to its own, safe country. But nothing the copy said could convince her and so it
 didn’t take long until a few insidious Copy Writers ambushed her, made her drunk
 with Longe and Parole and dragged her into their agency, where they abused her
 for their projects again and again.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[My Second Post!]]></title><description><![CDATA[Wow! I love blogging so much already. Did you know that "despite its name, salted duck eggs can also be made from
-chicken eggs, though the…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/my-second-post/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/my-second-post/</guid><pubDate>Wed, 06 May 2015 23:46:37 GMT</pubDate><content:encoded>&lt;p&gt;Wow! I love blogging so much already.&lt;/p&gt;
+chicken eggs, though the…]]></description><link>https://jundolee.github.io/my-second-post/</link><guid isPermaLink="false">https://jundolee.github.io/my-second-post/</guid><pubDate>Wed, 06 May 2015 23:46:37 GMT</pubDate><content:encoded>&lt;p&gt;Wow! I love blogging so much already.&lt;/p&gt;
 &lt;p&gt;Did you know that &quot;despite its name, salted duck eggs can also be made from
 chicken eggs, though the taste and texture will be somewhat different, and the
 egg yolk will be less rich.&quot;?
 (&lt;a href=&quot;https://en.wikipedia.org/wiki/Salted_duck_egg&quot;&gt;Wikipedia Link&lt;/a&gt;)&lt;/p&gt;
-&lt;p&gt;Yeah, I didn&apos;t either.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Hello World]]></title><description><![CDATA[This is my first post on my new fake blog! How exciting! I'm sure I'll write a lot more interesting things in the future. Oh, and here's a…]]></description><link>https://gatsbystarterblogsource.gatsbyjs.io/hello-world/</link><guid isPermaLink="false">https://gatsbystarterblogsource.gatsbyjs.io/hello-world/</guid><pubDate>Fri, 01 May 2015 22:12:03 GMT</pubDate><content:encoded>&lt;p&gt;This is my first post on my new fake blog! How exciting!&lt;/p&gt;
+&lt;p&gt;Yeah, I didn&apos;t either.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Hello World]]></title><description><![CDATA[This is my first post on my new fake blog! How exciting! I'm sure I'll write a lot more interesting things in the future. Oh, and here's a…]]></description><link>https://jundolee.github.io/hello-world/</link><guid isPermaLink="false">https://jundolee.github.io/hello-world/</guid><pubDate>Fri, 01 May 2015 22:12:03 GMT</pubDate><content:encoded>&lt;p&gt;This is my first post on my new fake blog! How exciting!&lt;/p&gt;
 &lt;p&gt;I&apos;m sure I&apos;ll write a lot more interesting things in the future.&lt;/p&gt;
 &lt;p&gt;Oh, and here&apos;s a great quote from this Wikipedia on
 &lt;a href=&quot;https://en.wikipedia.org/wiki/Salted_duck_egg&quot;&gt;salted duck eggs&lt;/a&gt;.&lt;/p&gt;
