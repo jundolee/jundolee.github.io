@@ -5,11 +5,11 @@ import type { ThemeConfig } from '~/types'
 
 export const defaultConfig: ThemeConfig = {
   site: {
-    title: '活版印字',
-    subtitle: 'Typography',
-    author: 'Moeyua',
-    description: 'Rediscory the beauty of typography',
-    website: 'https://astro-theme-typography.vercel.app/',
+    title: '타이틀',
+    subtitle: '서브타이틀',
+    author: 'jundol',
+    description: '디스크립션에 대한 부분으로 설명을 입력하는 곳',
+    website: 'https://jundolee.github.io',
     pageSize: 5,
     socialLinks: [
       {
@@ -56,7 +56,7 @@ export const defaultConfig: ThemeConfig = {
   },
   appearance: {
     theme: 'system',
-    locale: 'zh-cn',
+    locale: 'ko-kr',
     colorsLight: {
       primary: '#2e405b',
       background: '#ffffff',
