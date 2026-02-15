@@ -4,12 +4,13 @@ import type { Post } from '~/types'
 
 interface Props {
   post: Post
+  mode?: 'list' | 'detail'
 }
 
-const { post } = Astro.props
+const { post, mode = 'detail' } = Astro.props
 ---
 
-<article class="prose">
+<article class:list={['prose', mode === 'list' ? 'post-card' : 'post-article']}>
   <PostMeta post={post} />
   <slot />
 </article>

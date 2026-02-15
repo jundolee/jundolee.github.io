@@ -1,10 +1,33 @@
 :root {
   --uno-colors-primary: theme('colors.primary');
   --uno-colors-background: theme('colors.background');
-  --uno-fonts-ui: 'Freesentation', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --uno-fonts-ui: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', 'Noto Sans KR', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   --uno-colors-shadow: theme('colors.shadow');
-  --font-sans: 'Freesentation', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  --font-mono: 'Freesentation', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', 'Noto Sans KR', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  /* toss-inspired light tokens */
+  --surface-bg: #f2f4f6;
+  --surface-card: #ffffff;
+  --surface-border: #e5e8eb;
+  --surface-shadow: 0 8px 20px rgba(2, 32, 71, 0.04);
+  --text-primary: #191f28;
+  --text-secondary: #8b95a1;
+  --text-body: #374151;
+  --link-primary: #2f80ed;
+  --nav-text: #2f3744;
+}
+
+html.dark {
+  --surface-bg: #161a20;
+  --surface-card: #1f242d;
+  --surface-border: #303948;
+  --surface-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+  --text-primary: #f3f5f8;
+  --text-secondary: #98a2b3;
+  --text-body: #d3d9e2;
+  --link-primary: #60a5ff;
+  --nav-text: #e5e9f0;
 }
 
 body {
@@ -12,6 +35,8 @@ body {
   font-weight: 400;
   line-height: 1.68;
   text-rendering: optimizeLegibility;
+  background: var(--surface-bg);
+  color: var(--text-primary);
 }
 
 h1,
@@ -37,9 +62,18 @@ html {
 
   background-size: auto;
   background-image: none;
+  background-color: var(--surface-bg);
+  color: var(--text-primary);
+}
+
+main {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
 :where(a):not(.not-underline-hover) {
+  color: var(--link-primary);
   text-decoration-line: underline;
   text-decoration-thickness: 0.08em;
   text-underline-offset: 0.15em;
@@ -52,40 +86,184 @@ html {
   background: transparent;
 }
 
-/* editorial readability */
-.prose {
-  max-width: 72ch;
-  font-size: 1.03rem;
-  line-height: 1.75;
+/* post cards (list) */
+.post-card {
+  max-width: 100%;
+  background: var(--surface-card);
+  border: 1px solid var(--surface-border);
+  border-radius: 22px;
+  box-shadow: var(--surface-shadow);
+  padding: 1.35rem 1.45rem;
 }
 
-.prose :where(p, ul, ol, blockquote, pre, table) {
-  margin-block: 1.05em;
+.post-card + .post-card {
+  margin-top: 1.2rem;
 }
 
-.prose :where(h1) {
-  margin-top: 1.1em;
-  margin-bottom: 0.55em;
-  line-height: 1.18;
+.post-card .post-title {
+  margin: 0;
+  font-size: 1.52rem;
+  line-height: 1.34;
+  letter-spacing: -0.023em;
+  font-weight: 700;
+  word-break: keep-all;
+  color: var(--text-primary);
 }
 
-.prose :where(h2) {
-  margin-top: 1.45em;
-  margin-bottom: 0.55em;
+.post-card .post-title a {
+  color: var(--text-primary);
+  text-decoration: none;
 }
 
-.prose :where(h3) {
-  margin-top: 1.2em;
-  margin-bottom: 0.45em;
+.post-card .post-title a:hover {
+  color: var(--link-primary);
 }
 
-.prose :where(blockquote) {
-  border-inline-start: 3px solid var(--uno-colors-shadow);
-  padding-inline-start: 1rem;
-  opacity: 0.92;
+.post-card .text-3\.5,
+.post-card time {
+  color: var(--text-secondary);
+  font-size: 0.91rem;
 }
 
-.prose :where(hr) {
-  opacity: 0.45;
+.post-card .text-3\.5 a {
+  color: var(--link-primary);
+  font-weight: 600;
+}
+
+.post-card p {
+  color: var(--text-body);
+}
+
+/* post detail */
+.post-article {
+  max-width: 760px;
+  background: var(--surface-card);
+  border: 1px solid var(--surface-border);
+  border-radius: 22px;
+  box-shadow: var(--surface-shadow);
+  padding: 2rem 2.05rem;
+}
+
+.post-article .post-title {
+  margin: 0;
+  font-size: 1.78rem;
+  line-height: 1.3;
+  letter-spacing: -0.028em;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.post-article .post-title a {
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.post-article .text-3\.5,
+.post-article time {
+  color: var(--text-secondary);
+  font-size: 0.93rem;
+}
+
+.post-article .text-3\.5 a {
+  color: var(--link-primary);
+  font-weight: 600;
+}
+
+.post-article :where(p) {
+  font-size: 1.05rem;
+  line-height: 1.82;
+  color: var(--text-body);
+}
+
+.post-article :where(h2) {
+  font-size: 1.42rem;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  margin-top: 2.1rem;
+  margin-bottom: 0.75rem;
+  color: var(--text-primary);
+}
+
+.post-article :where(h3) {
+  font-size: 1.18rem;
+  margin-top: 1.55rem;
+  margin-bottom: 0.45rem;
+  color: var(--text-primary);
+}
+
+.post-article :where(ul, ol) {
+  padding-left: 1.2rem;
+}
+
+.post-article :where(li) {
+  margin: 0.42rem 0;
+  line-height: 1.72;
+}
+
+.post-article :where(blockquote) {
+  border-inline-start: 3px solid #dbe7ff;
+  background: color-mix(in srgb, var(--link-primary) 8%, transparent);
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  color: color-mix(in srgb, var(--text-primary) 85%, white 15%);
+}
+
+.post-article :where(pre) {
+  border-radius: 14px;
+  border: 1px solid color-mix(in srgb, var(--surface-border) 85%, transparent);
+}
+
+.post-article :where(hr) {
+  opacity: 1;
+  border: none;
+  border-top: 1px solid color-mix(in srgb, var(--surface-border) 85%, transparent);
   margin-block: 2rem;
+}
+
+/* sidebar navigation style unified with post detail (text links, not buttons) */
+header nav ul:first-child {
+  gap: 0.55rem;
+}
+
+header nav ul:first-child a {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  color: var(--nav-text) !important;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-decoration: underline 1px transparent;
+  text-underline-offset: 4px;
+}
+
+header nav ul:first-child a:hover {
+  color: var(--link-primary) !important;
+  text-decoration-color: color-mix(in srgb, var(--link-primary) 35%, transparent);
+}
+
+header nav ul:last-child a {
+  width: auto !important;
+  height: auto !important;
+  border: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  padding: 0 !important;
+  color: color-mix(in srgb, var(--nav-text) 80%, transparent) !important;
+}
+
+header nav ul:last-child a:hover {
+  color: var(--link-primary) !important;
+}
+
+header nav ul:last-child .mdi {
+  font-size: 1.6rem;
+}
+
+@media (min-width: 1024px) {
+  header nav ul:first-child a {
+    font-size: 2rem;
+    line-height: 1.08;
+  }
 }
