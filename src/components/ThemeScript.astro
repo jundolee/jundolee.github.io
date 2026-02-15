@@ -5,25 +5,42 @@ const theme = themeConfig.appearance.theme
 ---
 
 <script is:inline define:vars={{ theme }}>
-  function updateTheme(theme) {
-    // Check if theme is system
-    if (theme === 'system') {
-      // Check OS preference
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
-      document.documentElement.classList.toggle('dark', prefersDark)
-      return
-    }
-    // Set theme directly
-    document.documentElement.classList.toggle('dark', theme === 'dark')
-  }
+  (() => {
+    const storageKey = 'theme-preference'
+    const media = window.matchMedia('(prefers-color-scheme: dark)')
 
-  // Initial theme setup
-  updateTheme(theme)
+    const resolveDark = (mode) => mode === 'dark' || (mode === 'system' && media.matches)
 
-  // Listen for OS theme changes
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-    if (theme === 'system') {
-      document.documentElement.classList.toggle('dark', e.matches)
+    const getPreferred = () => {
+      const saved = localStorage.getItem(storageKey)
+      if (saved === 'light' || saved === 'dark' || saved === 'system')
+        return saved
+      return theme
     }
-  })
+
+    const apply = (mode) => {
+      const dark = resolveDark(mode)
+      document.documentElement.classList.toggle('dark', dark)
+      document.documentElement.dataset.theme = mode
+      window.dispatchEvent(new CustomEvent('themechange', { detail: { mode, dark } }))
+    }
+
+    const setPreferred = (mode) => {
+      localStorage.setItem(storageKey, mode)
+      apply(mode)
+    }
+
+    window['__theme'] = {
+      get: getPreferred,
+      set: setPreferred,
+      apply,
+    }
+
+    apply(getPreferred())
+
+    media.addEventListener('change', () => {
+      if (getPreferred() === 'system')
+        apply('system')
+    })
+  })()
 </script>

@@ -1,0 +1,89 @@
+<div id="theme-toggle" class="theme-toggle-wrap">
+  <button id="theme-toggle-btn" type="button" aria-label="테마 전환" title="테마 전환">
+    <span id="theme-toggle-icon" aria-hidden="true">☾</span>
+  </button>
+  <span class="theme-toggle-label">Theme</span>
+</div>
+
+<script is:inline>
+  (() => {
+    const btn = document.getElementById('theme-toggle-btn')
+    const icon = document.getElementById('theme-toggle-icon')
+    if (!btn || !icon)
+      return
+
+    const media = window.matchMedia('(prefers-color-scheme: dark)')
+    const storageKey = 'theme-preference'
+
+    const getMode = () => {
+      const saved = localStorage.getItem(storageKey)
+      if (saved === 'light' || saved === 'dark' || saved === 'system')
+        return saved
+      return window['__theme']?.get?.() ?? 'system'
+    }
+
+    const isDark = (mode) => mode === 'dark' || (mode === 'system' && media.matches)
+
+    const sync = () => {
+      const mode = getMode()
+      const dark = isDark(mode)
+      icon.textContent = dark ? '☀' : '☾'
+      btn.setAttribute('aria-pressed', String(dark))
+      btn.setAttribute('aria-label', dark ? '라이트 모드로 전환' : '다크 모드로 전환')
+      btn.setAttribute('title', dark ? '라이트 모드로 전환' : '다크 모드로 전환')
+    }
+
+    btn.addEventListener('click', () => {
+      const mode = getMode()
+      const next = isDark(mode) ? 'light' : 'dark'
+
+      if (window['__theme']?.set)
+        window['__theme'].set(next)
+      else {
+        localStorage.setItem(storageKey, next)
+        document.documentElement.classList.toggle('dark', next === 'dark')
+      }
+      sync()
+    })
+
+    window.addEventListener('themechange', sync)
+    media.addEventListener('change', sync)
+    sync()
+  })()
+</script>
+
+<style>
+  .theme-toggle-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    margin: 0.1rem 0 0.85rem;
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  #theme-toggle-btn {
+    width: 34px;
+    height: 34px;
+    border: 1px solid var(--surface-border);
+    border-radius: 11px;
+    background: var(--surface-card);
+    color: color-mix(in srgb, var(--nav-text) 80%, transparent);
+    box-shadow: 0 4px 10px rgba(15, 23, 42, 0.07);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    line-height: 1;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  #theme-toggle-btn:hover {
+    background: color-mix(in srgb, var(--surface-card) 85%, var(--surface-bg));
+    transform: translateY(-1px);
+    color: var(--link-primary);
+  }
+</style>

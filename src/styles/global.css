@@ -222,7 +222,7 @@ main {
 
 /* sidebar navigation style unified with post detail (text links, not buttons) */
 header nav ul:first-child {
-  gap: 0.55rem;
+  gap: 0.45rem;
 }
 
 header nav ul:first-child a {
@@ -231,8 +231,8 @@ header nav ul:first-child a {
   border-radius: 0 !important;
   padding: 0 !important;
   color: var(--nav-text) !important;
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-size: 1.08rem;
+  font-weight: 680;
   letter-spacing: -0.02em;
   text-decoration: underline 1px transparent;
   text-underline-offset: 4px;
@@ -263,7 +263,7 @@ header nav ul:last-child .mdi {
 
 @media (min-width: 1024px) {
   header nav ul:first-child a {
-    font-size: 2rem;
-    line-height: 1.08;
+    font-size: 1.62rem;
+    line-height: 1.14;
   }
 }
