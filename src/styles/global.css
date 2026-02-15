@@ -267,3 +267,37 @@ header nav ul:last-child .mdi {
     line-height: 1.14;
   }
 }
+
+/* mobile content width fix */
+@media (max-width: 768px) {
+  .post-card {
+    border-radius: 16px;
+    padding: 1rem;
+  }
+
+  .post-card .post-title {
+    font-size: 1.3rem;
+    line-height: 1.35;
+  }
+
+  .post-card p {
+    font-size: 1rem;
+    line-height: 1.68;
+  }
+
+  .post-article {
+    max-width: 100%;
+    border-radius: 16px;
+    padding: 1.35rem 1rem;
+  }
+
+  .post-article .post-title {
+    font-size: 1.5rem;
+    line-height: 1.32;
+  }
+
+  .post-article :where(p) {
+    font-size: 1rem;
+    line-height: 1.72;
+  }
+}
