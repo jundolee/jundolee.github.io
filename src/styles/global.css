@@ -1,10 +1,30 @@
 :root {
   --uno-colors-primary: theme('colors.primary');
   --uno-colors-background: theme('colors.background');
-  --uno-fonts-ui: 'Freesentation', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --uno-fonts-ui: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', Roboto, 'Noto Sans KR', Arial, sans-serif;
   --uno-colors-shadow: theme('colors.shadow');
-  --font-sans: 'Freesentation', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  --font-mono: 'Freesentation', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-sans: var(--uno-fonts-ui);
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --ui-border: color-mix(in srgb, var(--uno-colors-primary) 14%, transparent);
+  --ui-muted: color-mix(in srgb, var(--uno-colors-primary) 62%, transparent);
+  --ui-surface: color-mix(in srgb, var(--uno-colors-background) 92%, white 8%);
+  --ui-surface-strong: color-mix(in srgb, var(--uno-colors-background) 85%, white 15%);
+  --ui-link: #3d6ad6;
+}
+
+html.dark {
+  --ui-border: color-mix(in srgb, var(--uno-colors-primary) 20%, transparent);
+  --ui-muted: color-mix(in srgb, var(--uno-colors-primary) 68%, transparent);
+  --ui-surface: color-mix(in srgb, var(--uno-colors-background) 88%, white 12%);
+  --ui-surface-strong: color-mix(in srgb, var(--uno-colors-background) 80%, white 20%);
+  --ui-link: #7ea1ff;
+}
+
+html {
+  --at-apply: antialiased;
+  --at-apply: 'bg-background c-primary font-ui';
+  background-image: none;
 }
 
 body {
@@ -23,7 +43,7 @@ h6 {
   font-family: var(--font-sans);
   font-weight: 700;
   line-height: 1.25;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.012em;
 }
 
 strong,
@@ -31,31 +51,103 @@ b {
   font-weight: 700;
 }
 
-html {
-  --at-apply: antialiased;
-  --at-apply: 'bg-background c-primary font-ui';
-
-  background-size: auto;
-  background-image: none;
-}
-
 :where(a):not(.not-underline-hover) {
+  color: var(--ui-link);
   text-decoration-line: underline;
   text-decoration-thickness: 0.08em;
-  text-underline-offset: 0.15em;
-  text-decoration-color: color-mix(in srgb, currentColor 35%, transparent);
+  text-underline-offset: 0.16em;
+  text-decoration-color: color-mix(in srgb, var(--ui-link) 40%, transparent);
   transition: color 0.2s ease, text-decoration-color 0.2s ease;
 }
 
 :where(a):not(.not-underline-hover):hover {
-  text-decoration-color: currentColor;
+  text-decoration-color: var(--ui-link);
   background: transparent;
+}
+
+/* main content panel */
+.main-panel {
+  background: var(--ui-surface);
+  border: 1px solid var(--ui-border);
+  border-radius: 20px;
+  box-shadow: 0 1px 0 color-mix(in srgb, var(--uno-colors-primary) 6%, transparent);
+}
+
+/* brand + navigation */
+.site-brand .brand-subtitle {
+  margin: 0;
+  font-size: 0.84rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ui-muted);
+}
+
+.site-brand .brand-title {
+  margin: 0.12rem 0 0;
+  font-size: clamp(1.6rem, 2.8vw, 2.1rem);
+  line-height: 1.2;
+}
+
+.nav-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.38rem 0.72rem;
+  border-radius: 999px;
+  border: 1px solid var(--ui-border);
+  color: color-mix(in srgb, var(--uno-colors-primary) 84%, transparent);
+  text-decoration: none;
+  font-size: 0.9rem;
+  line-height: 1;
+  background: transparent;
+  transition: all 0.2s ease;
+}
+
+.nav-pill:hover {
+  background: var(--ui-surface-strong);
+  border-color: color-mix(in srgb, var(--uno-colors-primary) 24%, transparent);
+  color: var(--uno-colors-primary);
+}
+
+.social-link {
+  width: 2rem;
+  height: 2rem;
+  justify-content: center;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  color: var(--ui-muted);
+  transition: all 0.2s ease;
+}
+
+.social-link:hover {
+  background: var(--ui-surface-strong);
+  border-color: var(--ui-border);
+  color: var(--uno-colors-primary);
+}
+
+/* post cards */
+.post-card {
+  max-width: 78ch;
+  background: var(--ui-surface);
+  border: 1px solid var(--ui-border);
+  border-radius: 16px;
+  padding: 1.2rem 1.3rem;
+}
+
+.post-meta .post-title {
+  margin: 0;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  line-height: 1.3;
+}
+
+.post-meta .post-meta-row {
+  color: var(--ui-muted);
 }
 
 /* editorial readability */
 .prose {
   max-width: 72ch;
-  font-size: 1.03rem;
+  font-size: 1.02rem;
   line-height: 1.75;
 }
 
@@ -70,22 +162,82 @@ html {
 }
 
 .prose :where(h2) {
-  margin-top: 1.45em;
-  margin-bottom: 0.55em;
+  margin-top: 1.4em;
+  margin-bottom: 0.5em;
 }
 
 .prose :where(h3) {
-  margin-top: 1.2em;
-  margin-bottom: 0.45em;
+  margin-top: 1.18em;
+  margin-bottom: 0.42em;
 }
 
 .prose :where(blockquote) {
-  border-inline-start: 3px solid var(--uno-colors-shadow);
+  border-inline-start: 3px solid var(--ui-border);
   padding-inline-start: 1rem;
-  opacity: 0.92;
+  opacity: 0.95;
 }
 
 .prose :where(hr) {
-  opacity: 0.45;
+  opacity: 0.42;
   margin-block: 2rem;
+}
+
+/* archive */
+.archive-year-block {
+  max-width: 72ch;
+}
+
+.archive-year {
+  margin: 0 0 0.8rem;
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+  color: var(--ui-muted);
+}
+
+.archive-item {
+  padding: 0.28rem 0;
+  border-bottom: 1px dashed color-mix(in srgb, var(--ui-border) 70%, transparent);
+}
+
+.archive-item:last-child {
+  border-bottom: none;
+}
+
+.archive-title {
+  color: var(--uno-colors-primary);
+  text-decoration: none;
+}
+
+.archive-title:hover {
+  color: var(--ui-link);
+  text-decoration: underline;
+}
+
+/* pagination */
+.pagination-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.45rem 0.72rem;
+  border-radius: 10px;
+  border: 1px solid var(--ui-border);
+  text-decoration: none;
+  color: var(--uno-colors-primary);
+  font-size: 0.92rem;
+  transition: all 0.2s ease;
+}
+
+.pagination-btn:hover {
+  background: var(--ui-surface-strong);
+  border-color: color-mix(in srgb, var(--uno-colors-primary) 24%, transparent);
+}
+
+@media (max-width: 1024px) {
+  .main-panel {
+    border-radius: 14px;
+  }
+
+  .post-card {
+    padding: 1rem;
+  }
 }

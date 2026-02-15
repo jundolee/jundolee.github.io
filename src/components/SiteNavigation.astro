@@ -5,24 +5,25 @@ const { navLinks, socialLinks } = themeConfig.site
 const { translate: t } = Astro.locals
 ---
 
-<nav class="text-center font-bold" flex="~ col gap-4">
-  <ul lg="flex-col items-start text-4" class="text-3.5" flex="~ row gap-2 justify-center">
+<nav class="site-nav" flex="~ col gap-4">
+  <ul class="nav-links" flex="~ row gap-2 wrap justify-center" lg="justify-start">
     {
       navLinks.map((nav) => (
         <li>
-          <a class="" href={nav.href}>
+          <a class="nav-pill" href={nav.href}>
             {t(nav.name)}
           </a>
         </li>
       ))
     }
   </ul>
-  <ul flex="~ row gap-1 justify-center">
+
+  <ul class="social-links" flex="~ row gap-2 justify-center" lg="justify-start">
     {
       socialLinks.map(({ href, name }) => (
         <li>
-          <a href={href} target="_blank" title={name} class="not-underline-hover inline-flex items-center">
-            <span class:list={[`mdi mdi-${name}`, 'text-2xl']}></span>
+          <a href={href} target="_blank" title={name} class="social-link not-underline-hover inline-flex items-center">
+            <span class:list={[`mdi mdi-${name}`, 'text-xl']}></span>
           </a>
         </li>
       ))

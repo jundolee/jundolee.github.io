@@ -34,18 +34,16 @@ function getListItem(post: Post): ListItem {
 ---
 
 <LayoutDefault>
-  <div flex="~ col gap-4">
+  <div class="archive-wrap" flex="~ col gap-5">
     {
       yearMap.map(([year, posts]) => (
-        <section>
-          <h2 class="post-title">{year}</h2>
-          <ul class="pl-6" flex="~ col gap-4">
+        <section class="archive-year-block post-card">
+          <h2 class="archive-year">{year}</h2>
+          <ul class="archive-list" flex="~ col gap-2">
             {posts.map(({ title, href, date }) => (
-              <li>
-                <h3 class="post-title">
-                  <a href={href}>{title}</a>
-                </h3>
-                <time>{date}</time>
+              <li class="archive-item" flex="~ row justify-between items-start gap-3">
+                <a class="archive-title" href={href}>{title}</a>
+                <time class="archive-date text-sm opacity-65">{date}</time>
               </li>
             ))}
           </ul>

@@ -28,18 +28,18 @@ const {
 } = Astro.props
 ---
 
-<footer class="mt-5">
+<footer class="pagination-wrap mt-6">
   {
     showPageCount && (
-      <div class="mb-2.5">
+      <div class="pagination-count mb-3 text-sm opacity-70">
         {t('page_number', currentPage)} / {t('page_count', totalPage)}
       </div>
     )
   }
-  <div class="flex items-center gap-2">
+  <div class="pagination-row flex items-center gap-2 flex-wrap">
     {
       showLeft && (
-        <a title={leftTitle} href={leftUrl}>
+        <a class="pagination-btn" title={leftTitle} href={leftUrl}>
           <span class="inline-block vertical-mid i-mdi-chevron-double-left w-4 h-4" />
           {leftTitle}
         </a>
@@ -47,7 +47,7 @@ const {
     }
     {
       showRight && (
-        <a title={rightTitle} href={rightUrl}>
+        <a class="pagination-btn" title={rightTitle} href={rightUrl}>
           {rightTitle}
           <span class="inline-block vertical-mid i-mdi-chevron-double-right w-4 h-4" />
         </a>
