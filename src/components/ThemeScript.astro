@@ -5,7 +5,7 @@ const theme = themeConfig.appearance.theme
 ---
 
 <script is:inline define:vars={{ theme }}>
-  (() => {
+  ;(() => {
     const storageKey = 'theme-preference'
     const media = window.matchMedia('(prefers-color-scheme: dark)')
 
@@ -13,8 +13,9 @@ const theme = themeConfig.appearance.theme
 
     const getPreferred = () => {
       const saved = localStorage.getItem(storageKey)
-      if (saved === 'light' || saved === 'dark' || saved === 'system')
+      if (saved === 'light' || saved === 'dark' || saved === 'system') {
         return saved
+      }
       return theme
     }
 
@@ -30,7 +31,7 @@ const theme = themeConfig.appearance.theme
       apply(mode)
     }
 
-    window['__theme'] = {
+    window.__theme = {
       get: getPreferred,
       set: setPreferred,
       apply,
@@ -39,8 +40,9 @@ const theme = themeConfig.appearance.theme
     apply(getPreferred())
 
     media.addEventListener('change', () => {
-      if (getPreferred() === 'system')
+      if (getPreferred() === 'system') {
         apply('system')
+      }
     })
   })()
 </script>

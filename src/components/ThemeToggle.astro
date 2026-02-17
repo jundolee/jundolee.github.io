@@ -5,20 +5,22 @@
 </div>
 
 <script is:inline>
-  (() => {
+  ;(() => {
     const btn = document.getElementById('theme-toggle-btn')
     const icon = document.getElementById('theme-toggle-icon')
-    if (!btn || !icon)
+    if (!btn || !icon) {
       return
+    }
 
     const media = window.matchMedia('(prefers-color-scheme: dark)')
     const storageKey = 'theme-preference'
 
     const getMode = () => {
       const saved = localStorage.getItem(storageKey)
-      if (saved === 'light' || saved === 'dark' || saved === 'system')
+      if (saved === 'light' || saved === 'dark' || saved === 'system') {
         return saved
-      return window['__theme']?.get?.() ?? 'system'
+      }
+      return window.__theme?.get?.() ?? 'system'
     }
 
     const isDark = (mode) => mode === 'dark' || (mode === 'system' && media.matches)
@@ -36,9 +38,11 @@
       const mode = getMode()
       const next = isDark(mode) ? 'light' : 'dark'
 
-      if (window['__theme']?.set)
-        window['__theme'].set(next)
-      else {
+      if (window.__theme?.set) {
+        window.__theme.set(next)
+      }
+
+      if (!window.__theme?.set) {
         localStorage.setItem(storageKey, next)
         document.documentElement.classList.toggle('dark', next === 'dark')
       }

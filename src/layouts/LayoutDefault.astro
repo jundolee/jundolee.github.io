@@ -17,8 +17,14 @@ const dark = themeConfig.appearance.theme === 'dark'
 
 <html lang={lang} class:list={['animation-prepared', { dark }]}>
   <head>
-    <link rel="preload" href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/Freesentation-5Medium.woff2" as="font" type="font/woff2" crossorigin>
-    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css" rel="stylesheet">
+    <link
+      rel="preload"
+      href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-01@1.0/Freesentation-5Medium.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css" rel="stylesheet" />
     <slot name="seo"> <SiteSeo /> </slot>
     <LaTeX />
     <Analytics />

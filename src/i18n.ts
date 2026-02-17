@@ -119,7 +119,7 @@ export const LANGUAGES = {
     prev_post: 'Articolo Precedente',
     next_post: 'Articolo Succesivo',
   },
-    'ko-kr': {
+  'ko-kr': {
     Home: '홈',
     Posts: '포스트',
     Categories: '카테고리',

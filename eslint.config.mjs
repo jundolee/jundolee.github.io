@@ -4,4 +4,8 @@ export default antfu({
   formatters: true,
   unocss: true,
   astro: true,
+  ignores: [
+    'dist/**',
+    'public/previews/**',
+  ],
 })

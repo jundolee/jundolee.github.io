@@ -1,9 +1,11 @@
 :root {
   --uno-colors-primary: theme('colors.primary');
   --uno-colors-background: theme('colors.background');
-  --uno-fonts-ui: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', 'Noto Sans KR', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --uno-fonts-ui: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', 'Noto Sans KR', 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
   --uno-colors-shadow: theme('colors.shadow');
-  --font-sans: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', 'Noto Sans KR', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', 'Noto Sans KR', 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
   /* toss-inspired light tokens */
@@ -78,7 +80,9 @@ main {
   text-decoration-thickness: 0.08em;
   text-underline-offset: 0.15em;
   text-decoration-color: color-mix(in srgb, currentColor 35%, transparent);
-  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+  transition:
+    color 0.2s ease,
+    text-decoration-color 0.2s ease;
 }
 
 :where(a):not(.not-underline-hover):hover {
