@@ -11,6 +11,6 @@ const { post, mode = 'detail' } = Astro.props
 ---
 
 <article class:list={['prose', mode === 'list' ? 'post-card' : 'post-article']}>
-  <PostMeta post={post} />
+  <PostMeta post={post} mode={mode} />
   <slot />
 </article>
