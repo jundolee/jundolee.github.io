@@ -1,4 +1,6 @@
 ---
+import { themeConfig } from '~/.config'
+import SiteSeo from '~/components/SiteSeo.astro'
 import LayoutDefault from '~/layouts/LayoutDefault.astro'
 import type { Post } from '~/types'
 import { formatDate, getPosts } from '~/utils'
@@ -31,9 +33,14 @@ function getListItem(post: Post): ListItem {
     date: formatDate(post.data.pubDate, 'MM-DD'),
   }
 }
+
+const pageTitle = `아카이브 | ${themeConfig.site.title}`
+const pageDesc = `${themeConfig.site.title}의 연도별 글 목록입니다.`
 ---
 
 <LayoutDefault>
+  <SiteSeo slot="seo" title={pageTitle} desc={pageDesc} ogType="website" />
+
   <div flex="~ col gap-4">
     {
       yearMap.map(([year, posts]) => (

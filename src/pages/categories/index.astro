@@ -1,5 +1,6 @@
 ---
 import { themeConfig } from '~/.config'
+import SiteSeo from '~/components/SiteSeo.astro'
 import LayoutDefault from '~/layouts/LayoutDefault.astro'
 import { getCategories, getPathFromCategory } from '~/utils/index'
 
@@ -15,9 +16,14 @@ function getListFromMap(map: typeof categoryMap) {
     size: t('categories_count', value.length),
   }))
 }
+
+const pageTitle = `카테고리 | ${themeConfig.site.title}`
+const pageDesc = `${themeConfig.site.title}의 주제별 글 모음입니다.`
 ---
 
 <LayoutDefault>
+  <SiteSeo slot="seo" title={pageTitle} desc={pageDesc} ogType="website" />
+
   <section>
     <h2 class="post-title">{t('Categories')}</h2>
     <ul class="pl-6" flex="~ col gap-4">

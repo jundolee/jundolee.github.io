@@ -7,6 +7,8 @@ interface Props {
   title?: string
   desc?: string
   banner?: ImageMetadata
+  ogType?: 'website' | 'article'
+  noindex?: boolean
 }
 
 const props = Astro.props
@@ -20,6 +22,10 @@ const canonical = Astro.url.toString()
 const twitter = configSEO.twitter
 const rss = new URL('/atom.xml', Astro.site).toString()
 const optimizedImage = await getOptimizedImageURL()
+
+const pathname = Astro.url.pathname ?? '/'
+const ogType = props.ogType ?? (pathname.startsWith('/posts/') ? 'article' : 'website')
+const robotsContent = props.noindex ? 'noindex, nofollow' : 'index, follow'
 
 const seoLinks = [
   { rel: 'icon', href: '/favicon.svg', type: 'image/svg+xml' },
@@ -42,6 +48,7 @@ const twitterMeta = twitter
 const seoMeta = [
   { name: 'viewport', content: 'width=device-width' },
   { name: 'generator', content: Astro.generator },
+  { name: 'robots', content: robotsContent },
   { property: 'og:description', content: desc },
   { property: 'og:site_name', content: configSite.title },
   { property: 'og:locale', content: themeConfig.appearance.locale },
@@ -57,7 +64,7 @@ const seoMeta = [
 const openGraph: SEOProps['openGraph'] = {
   basic: {
     title,
-    type: 'article',
+    type: ogType,
     image: optimizedImage,
     url: canonical,
   },

@@ -2,6 +2,7 @@
 import type { GetStaticPaths, InferGetStaticPropsType } from 'astro'
 import { themeConfig } from '~/.config'
 import Pagination from '~/components/Pagination.astro'
+import SiteSeo from '~/components/SiteSeo.astro'
 import LayoutDefault from '~/layouts/LayoutDefault.astro'
 import LayoutPost from '~/layouts/LayoutPost.astro'
 import { getPostDescription, getPosts } from '~/utils'
@@ -21,9 +22,20 @@ export const getStaticPaths = (async ({ paginate }) => {
 type Props = InferGetStaticPropsType<typeof getStaticPaths>
 
 const { page } = Astro.props
+const isFirstPage = page.currentPage === 1
+
+const pageTitle = isFirstPage
+  ? themeConfig.site.title
+  : `인사이트 ${page.currentPage}페이지 | ${themeConfig.site.title}`
+
+const pageDesc = isFirstPage
+  ? themeConfig.site.description
+  : `${themeConfig.site.title}의 인사이트 목록 ${page.currentPage}페이지입니다.`
 ---
 
 <LayoutDefault>
+  <SiteSeo slot="seo" title={pageTitle} desc={pageDesc} ogType="website" />
+
   <section contain-layout flex="~ col gap-7.5">
     {
       page.data.map((post) => (

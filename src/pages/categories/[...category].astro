@@ -1,5 +1,6 @@
 ---
 import { themeConfig } from '~/.config'
+import SiteSeo from '~/components/SiteSeo.astro'
 import LayoutDefault from '~/layouts/LayoutDefault.astro'
 import type { Post } from '~/types'
 import { formatDate, getCategories, getPathFromCategory } from '~/utils'
@@ -25,9 +26,14 @@ function getListItems(posts: Post[]) {
   }))
   return result
 }
+
+const pageTitle = `#${name} | ${themeConfig.site.title}`
+const pageDesc = `${name} 카테고리의 글 목록입니다.`
 ---
 
 <LayoutDefault>
+  <SiteSeo slot="seo" title={pageTitle} desc={pageDesc} ogType="website" />
+
   <section>
     <h2 class="post-title"># {name}</h2>
     <ul class="pl-6 py-3" flex="~ col gap-4">
