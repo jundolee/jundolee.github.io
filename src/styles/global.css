@@ -14,7 +14,7 @@
   --surface-border: #e5e8eb;
   --surface-shadow: 0 8px 20px rgba(2, 32, 71, 0.04);
   --text-primary: #191f28;
-  --text-secondary: #8b95a1;
+  --text-secondary: #6f7a87;
   --text-body: #374151;
   --link-primary: #2f80ed;
   --nav-text: #2f3744;
@@ -35,7 +35,7 @@ html.dark {
 body {
   font-family: var(--font-sans);
   font-weight: 400;
-  line-height: 1.68;
+  line-height: 1.72;
   text-rendering: optimizeLegibility;
   background: var(--surface-bg);
   color: var(--text-primary);
@@ -97,7 +97,7 @@ main {
   border: 1px solid var(--surface-border);
   border-radius: 22px;
   box-shadow: var(--surface-shadow);
-  padding: 1.35rem 1.45rem;
+  padding: 1.45rem 1.55rem;
 }
 
 .post-card + .post-card {
@@ -126,7 +126,7 @@ main {
 .post-card .text-3\.5,
 .post-card time {
   color: var(--text-secondary);
-  font-size: 0.91rem;
+  font-size: 0.94rem;
 }
 
 .post-card .text-3\.5 a {
@@ -165,7 +165,7 @@ main {
 .post-article .text-3\.5,
 .post-article time {
   color: var(--text-secondary);
-  font-size: 0.93rem;
+  font-size: 0.95rem;
 }
 
 .post-article .text-3\.5 a {
@@ -175,7 +175,7 @@ main {
 
 .post-article :where(p) {
   font-size: 1.05rem;
-  line-height: 1.82;
+  line-height: 1.76;
   color: var(--text-body);
 }
 
@@ -267,7 +267,7 @@ header nav ul:last-child .mdi {
 
 @media (min-width: 1024px) {
   header nav ul:first-child a {
-    font-size: 1.48rem;
+    font-size: 1.24rem;
     line-height: 1.14;
   }
 }
@@ -286,7 +286,7 @@ header nav ul:last-child .mdi {
 
   .post-card p {
     font-size: 1rem;
-    line-height: 1.68;
+    line-height: 1.74;
   }
 
   .post-article {
@@ -302,6 +302,6 @@ header nav ul:last-child .mdi {
 
   .post-article :where(p) {
     font-size: 1rem;
-    line-height: 1.72;
+    line-height: 1.74;
   }
 }
