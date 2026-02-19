@@ -1,0 +1,59 @@
+<svg width="1400" height="860" viewBox="0 0 1400 860" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#1f2937"/>
+    </linearGradient>
+    <style>
+      .title { font: 700 46px 'Pretendard', 'Apple SD Gothic Neo', sans-serif; fill: #f9fafb; }
+      .subtitle { font: 400 24px 'Pretendard', 'Apple SD Gothic Neo', sans-serif; fill: #d1d5db; }
+      .node { fill: #0f172a; stroke: #38bdf8; stroke-width: 3; }
+      .node2 { fill: #0f172a; stroke: #22c55e; stroke-width: 3; }
+      .txt { font: 700 27px 'Pretendard', 'Apple SD Gothic Neo', sans-serif; fill: #f9fafb; }
+      .small { font: 400 21px 'Pretendard', 'Apple SD Gothic Neo', sans-serif; fill: #cbd5e1; }
+      .arrow { stroke: #94a3b8; stroke-width: 4; marker-end: url(#m); fill: none; }
+    </style>
+    <marker id="m" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#94a3b8" />
+    </marker>
+  </defs>
+
+  <rect width="1400" height="860" fill="url(#bg2)" rx="24"/>
+
+  <text x="70" y="90" class="title">개인 대응 루프: 불안보다 실행</text>
+  <text x="70" y="130" class="subtitle">원문의 조언을 개인·팀 실천 단계로 재구성</text>
+
+  <rect x="100" y="220" width="360" height="160" rx="22" class="node"/>
+  <text x="140" y="285" class="txt">1) 관측</text>
+  <text x="140" y="330" class="small">내 업무에서 반복·문서·분석 영역 찾기</text>
+
+  <rect x="520" y="220" width="360" height="160" rx="22" class="node2"/>
+  <text x="560" y="285" class="txt">2) 실험</text>
+  <text x="560" y="330" class="small">유료 모델로 실제 과업 1개 자동화 시도</text>
+
+  <rect x="940" y="220" width="360" height="160" rx="22" class="node"/>
+  <text x="980" y="285" class="txt">3) 검증</text>
+  <text x="980" y="330" class="small">정확도·시간절감·리스크 체크</text>
+
+  <rect x="940" y="500" width="360" height="160" rx="22" class="node2"/>
+  <text x="980" y="565" class="txt">4) 내재화</text>
+  <text x="980" y="610" class="small">팀 템플릿·워크플로에 반영</text>
+
+  <rect x="520" y="500" width="360" height="160" rx="22" class="node"/>
+  <text x="560" y="565" class="txt">5) 재학습</text>
+  <text x="560" y="610" class="small">모델 교체·프롬프트 개선·역할 재정의</text>
+
+  <rect x="100" y="500" width="360" height="160" rx="22" class="node2"/>
+  <text x="140" y="565" class="txt">6) 포지셔닝</text>
+  <text x="140" y="610" class="small">대체 어려운 역량(관계·책임·현장성) 강화</text>
+
+  <path d="M460 300 L520 300" class="arrow"/>
+  <path d="M880 300 L940 300" class="arrow"/>
+  <path d="M1120 380 L1120 500" class="arrow"/>
+  <path d="M940 580 L880 580" class="arrow"/>
+  <path d="M520 580 L460 580" class="arrow"/>
+  <path d="M280 500 L280 380" class="arrow"/>
+
+  <rect x="70" y="720" width="1260" height="100" rx="14" fill="#0b1220" opacity="0.95"/>
+  <text x="100" y="782" class="subtitle">핵심: “하루 1시간 실험”을 루프로 만들면, 기술 변화 속도보다 느리지 않게 움직일 수 있다.</text>
+</svg>

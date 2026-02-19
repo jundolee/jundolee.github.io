@@ -1,0 +1,52 @@
+<svg width="1400" height="760" viewBox="0 0 1400 760" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#22c55e"/>
+    </linearGradient>
+    <style>
+      .title { font: 700 44px 'Pretendard', 'Apple SD Gothic Neo', sans-serif; fill: #f8fafc; }
+      .subtitle { font: 400 24px 'Pretendard', 'Apple SD Gothic Neo', sans-serif; fill: #cbd5e1; }
+      .year { font: 700 30px 'Pretendard', 'Apple SD Gothic Neo', sans-serif; fill: #e2e8f0; }
+      .desc { font: 400 22px 'Pretendard', 'Apple SD Gothic Neo', sans-serif; fill: #cbd5e1; }
+    </style>
+  </defs>
+
+  <rect width="1400" height="760" fill="url(#bg)" rx="24"/>
+
+  <text x="70" y="90" class="title">AI 성능 도약 타임라인 (요약)</text>
+  <text x="70" y="130" class="subtitle">Matt Shumer의 글에서 제시한 변화 인식 포인트를 시각화</text>
+
+  <line x1="100" y1="360" x2="1300" y2="360" stroke="url(#line)" stroke-width="8" stroke-linecap="round"/>
+
+  <circle cx="170" cy="360" r="16" fill="#38bdf8"/>
+  <circle cx="430" cy="360" r="16" fill="#38bdf8"/>
+  <circle cx="690" cy="360" r="16" fill="#38bdf8"/>
+  <circle cx="950" cy="360" r="16" fill="#22c55e"/>
+  <circle cx="1210" cy="360" r="16" fill="#22c55e"/>
+
+  <text x="120" y="300" class="year">2022</text>
+  <text x="80" y="410" class="desc">기초 계산도 종종 불안정</text>
+
+  <text x="380" y="300" class="year">2023</text>
+  <text x="310" y="410" class="desc">전문 시험·문서 작업 급성장</text>
+
+  <text x="640" y="300" class="year">2024</text>
+  <text x="560" y="410" class="desc">실사용 소프트웨어 작성 능력 강화</text>
+
+  <text x="890" y="300" class="year">2025</text>
+  <text x="820" y="410" class="desc">현업 엔지니어 업무 대체 가속</text>
+
+  <text x="1130" y="300" class="year">2026</text>
+  <text x="1030" y="410" class="desc">코딩 모델 고도화·자가개선 루프 언급</text>
+
+  <rect x="70" y="520" width="1260" height="170" rx="16" fill="#1e293b" opacity="0.9"/>
+  <text x="100" y="575" class="subtitle">핵심 메시지:</text>
+  <text x="260" y="575" class="subtitle">변화는 선형이 아니라 계단식으로 체감되며,</text>
+  <text x="100" y="620" class="subtitle">‘아직 멀었다’는 감각이 어느 날 ‘이미 시작됐다’로 바뀔 수 있다.</text>
+  <text x="100" y="665" class="subtitle">(원문 주장 요약 도식)</text>
+</svg>
