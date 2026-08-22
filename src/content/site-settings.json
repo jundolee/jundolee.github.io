@@ -1,0 +1,14 @@
+{
+  "title": "준 블로그 생각과 기록들",
+  "description": "기록하는 일은 지금의 생각과 감정을 붙잡아 두는 일입니다. 지나가는 순간 속에서 무엇을 느꼈고 어떤 질문을 했는지 남겨두면, 나중의 나는 그때의 나를 더 선명하게 이해할 수 있습니다. 그래서 이곳에 제품과 일, 기술과 삶에 관한 생각을 씁니다.\n\n글은 매일의 생각을 남기고, 돌아보고, 누군가에게 닿게 하는 방식이라고 믿습니다. 완성된 답만이 아니라 아직 정리되지 않은 감정과 질문도 기록합니다. 쓰고 남기고 보여지는 과정 속에서 생각은 조금 더 분명해지고, 다음의 나아갈 방향도 발견할 수 있으니까요.",
+  "navLinks": [
+    { "name": "Posts", "href": "/" },
+    { "name": "Archive", "href": "/archive" },
+    { "name": "Categories", "href": "/categories" },
+    { "name": "About", "href": "/about" }
+  ],
+  "socialLinks": [
+    { "name": "github", "href": "https://github.com/jundolee" },
+    { "name": "rss", "href": "/atom.xml" }
+  ]
+}

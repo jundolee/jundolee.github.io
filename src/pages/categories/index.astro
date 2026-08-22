@@ -24,13 +24,13 @@ const pageDesc = `${themeConfig.site.title}의 주제별 그�
 <LayoutDefault>
   <SiteSeo slot="seo" title={pageTitle} desc={pageDesc} ogType="website" />
 
-  <section>
-    <h2 class="post-title">{t('Categories')}</h2>
-    <ul class="pl-6" flex="~ col gap-4">
+  <section class="page-list">
+    <h2 class="page-heading">{t('Categories')}</h2>
+    <ul class="page-list-items">
       {
         list.map(({ title, href, size }) => (
           <li>
-            <h3 class="post-title">
+            <h3>
               <a href={href}># {title}</a>
             </h3>
             <p>{size}</p>

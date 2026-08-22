@@ -34,13 +34,13 @@ const pageDesc = `${name} 카테고리의 글 목ᄅ�
 <LayoutDefault>
   <SiteSeo slot="seo" title={pageTitle} desc={pageDesc} ogType="website" />
 
-  <section>
-    <h2 class="post-title"># {name}</h2>
-    <ul class="pl-6 py-3" flex="~ col gap-4">
+  <section class="page-list">
+    <h2 class="page-heading"># {name}</h2>
+    <ul class="page-list-items">
       {
         getListItems(posts).map(({ title, href, date }) => (
           <li>
-            <h3 class="post-title">
+            <h3>
               <a href={href}>{title}</a>
             </h3>
             <time>{date}</time>

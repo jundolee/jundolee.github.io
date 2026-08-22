@@ -30,7 +30,7 @@ function getListItem(post: Post): ListItem {
   return {
     title: post.data.title,
     href: `/posts/${post.id}/`,
-    date: formatDate(post.data.pubDate, 'MM-DD'),
+    date: formatDate(post.data.pubDate),
   }
 }
 
@@ -41,15 +41,15 @@ const pageDesc = `${themeConfig.site.title}의 연도별 ᄀ�
 <LayoutDefault>
   <SiteSeo slot="seo" title={pageTitle} desc={pageDesc} ogType="website" />
 
-  <div flex="~ col gap-4">
+  <div class="page-list">
     {
       yearMap.map(([year, posts]) => (
         <section>
-          <h2 class="post-title">{year}</h2>
-          <ul class="pl-6" flex="~ col gap-4">
+          <h2 class="page-heading">{year}</h2>
+          <ul class="page-list-items">
             {posts.map(({ title, href, date }) => (
               <li>
-                <h3 class="post-title">
+                <h3>
                   <a href={href}>{title}</a>
                 </h3>
                 <time>{date}</time>

@@ -1,6 +1,7 @@
 ---
 import PostMeta from '~/components/PostMeta.astro'
 import type { Post } from '~/types'
+import { formatDate } from '~/utils'
 
 interface Props {
   post: Post
@@ -10,7 +11,23 @@ interface Props {
 const { post, mode = 'detail' } = Astro.props
 ---
 
-<article class:list={['prose', mode === 'list' ? 'post-card' : 'post-article']}>
-  <PostMeta post={post} mode={mode} />
-  <slot />
-</article>
+{
+  mode === 'list'
+    ? (
+        <article class="writer-post-row">
+          <a class="writer-post-link" href={`/posts/${post.id}/`}>
+            <time class="writer-post-date">{formatDate(post.data.modDate ?? post.data.pubDate)}</time>
+            <h2>{post.data.title}</h2>
+            <svg class="writer-post-arrow" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+            </svg>
+          </a>
+        </article>
+      )
+    : (
+        <article class="prose writer-article">
+          <PostMeta post={post} mode={mode} />
+          <slot />
+        </article>
+      )
+}

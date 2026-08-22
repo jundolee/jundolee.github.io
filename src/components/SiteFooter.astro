@@ -1,22 +1,8 @@
 ---
+const year = new Date().getFullYear()
 import { themeConfig } from '~/.config'
 
-const year = new Date().getFullYear()
-
-const { website, author, footer } = themeConfig.site
-
-function parseFooter(str: string) {
-  str = str.replace(/%author/g, author)
-  str = str.replace(/%website/g, website)
-  str = str.replace(/%year/g, year.toString())
-  return str
-}
+const { author } = themeConfig.site
 ---
 
-{footer.length && footer.map((str) => <p set:html={parseFooter(str)} />)}
-
-<style>
-  p {
-    --at-apply: 'font-bold text-3';
-  }
-</style>
+<div class="footer-copy">{author} <span>{year} &copy;</span></div>
