@@ -1,12 +1,11 @@
 ---
 import { SEO, type SEOProps } from 'astro-seo'
-import { getImage } from 'astro:assets'
 import { themeConfig } from '~/.config'
 
 interface Props {
   title?: string
   desc?: string
-  banner?: ImageMetadata
+  banner?: string
   ogType?: 'website' | 'article'
   noindex?: boolean
 }
@@ -71,8 +70,7 @@ const openGraph: SEOProps['openGraph'] = {
 }
 
 async function getOptimizedImageURL() {
-  const image = props.banner && (await getImage({ src: props.banner, format: 'jpeg' }))
-  return new URL(image?.src ?? '/placeholder.png', Astro.url).toString()
+  return new URL(props.banner ?? '/placeholder.png', Astro.url).toString()
 }
 ---
 
