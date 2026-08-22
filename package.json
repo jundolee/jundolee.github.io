@@ -13,7 +13,7 @@
     "preview": "astro preview",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "astro sync && tsc --noEmit",
     "theme:release": "tsx scripts/release-theme.ts",
     "theme:create": "tsx scripts/create-post.ts",
     "theme:update": "tsx scripts/update-theme.ts"
