@@ -217,6 +217,14 @@ a {
 .writer-article-content > :first-child {
   margin-top: 0;
 }
+
+.writer-article-banner {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 0 0 2.5rem;
+  object-fit: cover;
+}
 .writer-article :where(p, li) {
   margin: 1.5rem 0;
   font: inherit;

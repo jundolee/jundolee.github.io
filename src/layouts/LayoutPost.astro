@@ -33,6 +33,9 @@ const { post, mode = 'detail' } = Astro.props
     <article class="prose writer-article">
       <PostMeta post={post} mode={mode} />
       <div class="writer-article-content">
+        {post.data.banner && (
+          <img class="writer-article-banner" src={post.data.banner} alt={`${post.data.title} 대표 이미지`} />
+        )}
         <slot />
       </div>
     </article>
