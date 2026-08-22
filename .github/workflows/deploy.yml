@@ -14,6 +14,12 @@ permissions:
   pages: write
   id-token: write
 
+# GitHub Pages는 한 번에 하나의 프로덕션 배포만 허용합니다.
+# CMS에서 연속 저장해도 배포가 충돌하지 않도록 다음 실행을 대기시킵니다.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
