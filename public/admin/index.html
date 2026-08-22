@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex" />
     <title>준 블로그 편집기</title>
+    <script>
+      if (window.location.hostname === 'jundolee.github.io') {
+        const cmsUrl = new URL('https://heroic-axolotl-5c89e6.netlify.app/admin/')
+        cmsUrl.search = window.location.search
+        cmsUrl.hash = window.location.hash
+        window.location.replace(cmsUrl.href)
+      }
+    </script>
   </head>
   <body>
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
