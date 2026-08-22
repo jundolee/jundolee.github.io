@@ -27,7 +27,9 @@ const { post, mode = 'detail' } = Astro.props
     : (
         <article class="prose writer-article">
           <PostMeta post={post} mode={mode} />
-          <slot />
+          <div class="writer-article-content">
+            <slot />
+          </div>
         </article>
       )
 }
