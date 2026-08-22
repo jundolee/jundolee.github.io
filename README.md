@@ -1,211 +1,90 @@
-# Typography
+# 준 블로그 생각과 기록들
 
-<p align='center'>
-  <img src='./public/typograph-og.jpg' alt='Typography' width='600'/>
-</p>
+생각과 기록을 남기는 개인 블로그입니다. 제품, 일, 기술과 삶에 관한 글을 Markdown으로 작성하며, 웹 CMS에서도 발행할 수 있습니다.
 
-<h6 align='center'>
-<a href="https://astro-theme-typography.vercel.app/">Live Demo</a>
-</h6>
-<h5 align='center'>
-<b>This work is rewrite from <a href="https://github.com/sumimakito/hexo-theme-typography">hexo-theme-Typography</a></b>
-</h5>
-<p align='center'>
-<b>English</b> | <a href="./README.zh-CN.md">简体中文</a>
-</p>
+- 블로그: [jundolee.github.io](https://jundolee.github.io/)
+- 글 관리: [Netlify CMS 관리자](https://heroic-axolotl-5c89e6.netlify.app/admin/)
 
-## Features
+## 구성
 
-- Build with **Astro**, **TypeScript** and **UnoCSS**
-- **Fast**. 100% [Pagespeed Score](https://pagespeed.web.dev/analysis/https-astro-theme-typography-vercel-app/j34nq9tx0s?form_factor=desktop).
-- **Typography** Derived from prevalent Chinese typographic norms and aims to provide an enhanced reading experience for website visitors.
-- **Responsive**. Responsive and works well on all screen sizes.
-- **Accessible**. A well thought out semantic and accessible content.
-- **SEO friendly**.Open Graph and Twitter Cards support for a better social sharing experience.
-- **Sitemap** and **RSS feed** for search engines.
-- i18n support.
-- Support Disqus, Giscus, Twikoo as comment service.
-- Dark mode support.
+- **Astro** 기반의 정적 블로그
+- **Pretendard** 한글 폰트와 읽기 중심의 에디토리얼 레이아웃
+- **Decap CMS + Netlify Identity**로 브라우저에서 글·카테고리·메뉴 관리
+- Markdown, RSS, sitemap, Open Graph 메타데이터 지원
+- GitHub Actions를 통한 품질 검사와 GitHub Pages 배포
 
-## Demo
+## 글 작성하기
 
-> Submit a PR to add your blog Demo.
+가장 간단한 방법은 CMS를 사용하는 것입니다.
 
-- [Live Demo](https://astro-theme-typography.vercel.app/)
-- [My Blog](https://blog.moeyua.com/)
-- [Julyfun's Blog (how to fully build this blog using `bun` in minutes)](https://julyfun.fun/posts/%E5%85%89%E9%80%9F%E6%90%AD%E5%BB%BA%E8%BF%99%E6%A0%B7%E4%B8%80%E4%B8%AA%E5%8D%9A%E5%AE%A2/)
-- [Jinx's Blog](https://blog.mytest.cc/)
-- [Unconventional Reading Notes](https://books.beyondxin.top/)
+1. [관리자 화면](https://heroic-axolotl-5c89e6.netlify.app/admin/)에 로그인합니다.
+2. `글`에서 새 글을 만들거나 기존 글을 수정합니다.
+3. `Publish`를 누르면 `main` 브랜치에 반영되고 자동 배포됩니다.
 
-## Getting Started
+대표 이미지는 CMS에서 업로드하면 `public/images/uploads`에 저장되며, 상세 글 제목 아래에 배너로 표시됩니다.
 
-Typography is a minimal, responsive and SEO-friendly Astro blog theme. This guide will help you get started with a new project.
+메뉴와 메인 소개 문구는 CMS의 `사이트 설정`에서 관리합니다.
 
-### Quick Start
+## 로컬에서 실행하기
 
-You can fork the repository to your account by clicking the Fork button in the upper right corner, click the button below, select the repository you just forked, click the Import button, and you will be taken to the project configuration page.
+Node.js LTS 환경에서 실행합니다. `corepack` 없이도 npm으로 사용할 수 있습니다.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start)
+```bash
+npm install
+npm run dev
+```
 
-Or you can refer to the [Astro](https://docs.astro.build/guides/deploy/) documentation to deploy to your favorite platform.
+개발 서버는 보통 `http://localhost:4321`에서 열립니다.
 
-### Add post
+| 명령어              | 설명                                   |
+| ------------------- | -------------------------------------- |
+| `npm run dev`       | 개발 서버 실행                         |
+| `npm run build`     | 타입 검사 후 정적 사이트 빌드          |
+| `npm run preview`   | 빌드 결과 미리 보기                    |
+| `npm run lint`      | 코드 형식 검사                         |
+| `npm run lint:fix`  | 코드 형식 자동 정리                    |
+| `npm run typecheck` | Astro 콘텐츠 동기화 후 TypeScript 검사 |
 
-You can add content by creating a new markdown file in `src/content/posts`. The file need metadata in the frontmatter, like this:
+## 파일 구조
+
+```text
+src/
+  content/
+    posts/              # Markdown 글
+    site-settings.json  # 블로그 제목·소개·메뉴 설정
+  layouts/              # 목록·상세 글 레이아웃
+  styles/               # 전역 스타일과 폰트
+public/
+  admin/                # Decap CMS 설정
+  images/uploads/       # CMS 업로드 이미지
+```
+
+CMS 없이 직접 글을 작성하려면 `src/content/posts`에 Markdown 파일을 추가합니다.
 
 ```md
 ---
-title: title
-pubDate: 2021-08-01
-categories: ["article"]
-description: "description"
+title: 글 제목
+pubDate: 2026-08-23
+categories:
+  - 일반
+draft: false
+description: 글 요약
+banner: /images/uploads/cover.jpg
 ---
+
+여기부터 본문입니다.
 ```
 
-Or, you can use the following command in your terminal to create a new post:
+## 배포와 점검
 
-```bash
-pnpm theme:create
-```
+`main` 브랜치에 변경이 들어오면 다음이 자동 실행됩니다.
 
-## Updating the theme
+1. Quality Gate — 린트, 타입 검사, 빌드
+2. GitHub Pages — 정적 사이트 배포
+3. Netlify — CMS와 Netlify 배포 갱신
 
-You can simply [`Sync Fork`](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork) on your own forked project (do not click Discard Changes, otherwise you will lose your own changes).
+GitHub Pages 배포는 CMS에서 여러 변경을 연달아 저장해도 충돌하지 않도록 순서대로 처리합니다.
 
-## Customization
+## 라이선스 및 출처
 
-Typography is highly customizable. The default configuration file is [src/.config/default.ts](src/.config/default.ts), you can override the default configuration in [src/.config/user.ts](src/.config/user.ts) as needed.
-
-### Social links
-
-Typography has built-in support for adding links to your social media accounts to the site via the social option in the config file:
-
-```ts
-socials: [
-  {
-    name: 'github',
-    href: 'https://github.com/moeyua/astro-theme-typography'
-  }
-]
-```
-
-The `name` is the icon name in [Material Design Icons](https://pictogrammers.com/library/mdi/),
-which will be automatically generated as the icon.
-
-> Note that you need to restart the development server to see the changes.
-
-### Navigation links
-
-By default, the navigation are `Posts`, `Archive`, `Categories` and `About`. You can add more in the config file:
-
-```ts
-{
-  navs: [
-    {
-      name: 'Categories',
-      href: '/categories'
-    }
-  ]
-}
-```
-
-And then add the corresponding page in `src/pages`, see more in [Astro Pages](https://docs.astro.build/en/core-concepts/astro-pages/)
-
-### Dark mode
-
-Typography supports dark mode. You can change it in the config file:
-
-```ts
-themeStyle: 'dark' // 'light' | 'dark' | 'system'
-```
-
-### Internationalization (i18n)
-
-Typography provides built-in support for multilingual sites. By default, the language is `en-us`, you can change it in the config file:
-
-```ts
-locale: 'zh-cn'
-```
-
-For now, Typography supports below languages:
-
-- `en-us`
-- `zh-cn`
-- `zh-tw`
-- `ja-jp`
-- `it-it`
-
-You can see all supported languages in [src/i18n.ts](src/i18n.ts), and add more if you need.
-
-### Comment
-
-Typography supports multiple comment services, currently supports [Disqus](https://disqus.com/), [Giscus](https://giscus.app/) and [Twikoo](https://twikoo.js.org/).
-
-Enable the corresponding comment service by adding the configuration to the config file, when you fill in multiple comment services, only the first service will be displayed.
-
-#### Disqus
-
-You can enable Disqus by adding the following configuration to the config file:
-
-```ts
-comments: {
-  disqus: {
-    shortname: 'your-disqus-shortname'
-  }
-}
-```
-
-#### Giscus
-
-Based on the [Giscus web component](https://github.com/giscus/giscus-component?tab=readme-ov-file#using-the-web-component) implementation.
-
-The prop names are the same as the data- attributes shown on the [giscus website](<(https://giscus.app/)>), but written in camelCase with the data- prefix and dashes removed.
-
-You can enable Giscus by adding the following configuration to the config file:
-
-```ts
-{
-  comments: {
-    giscus: {
-      repo: 'moeyua/astro-theme-typography'
-      repoId: 'R_kgDOKy9HOQ'
-      category: 'General'
-      categoryId: 'DIC_kwDOKy9HOc4CegmW'
-      mapping: 'title'
-      strict: '0'
-      reactionsEnabled: '1'
-      emitMetadata: '1'
-      inputPosition: 'top'
-      theme: 'light'
-      lang: 'zh-CN'
-      loading: 'lazy'
-    }
-  }
-}
-```
-
-#### Twikoo
-
-You can enable Twikoo by adding the following configuration to the config file:
-
-```ts
-{
-  comments: {
-    twikoo: {
-      envId: 'your-env-id'
-    }
-  }
-}
-```
-
-## Pagespeed Score
-
-[![Pagespeed Score](https://github.com/moeyua/astro-theme-typography/assets/45156493/2272f576-d6ff-49ef-a294-5c2acf365907)](https://pagespeed.web.dev/analysis/https-astro-theme-typography-vercel-app/j34nq9tx0s?form_factor=desktop)
-
-## TODO
-
-- [ ] WebSub
-- [x] comment
-- [ ] search
-- [ ] analytics
+이 프로젝트는 [Astro Typography](https://github.com/moeyua/astro-theme-typography) 테마를 바탕으로 블로그 용도에 맞게 재구성했습니다.
