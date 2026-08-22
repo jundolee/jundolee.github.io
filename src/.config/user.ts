@@ -1,5 +1,5 @@
-import siteSettings from '../content/site-settings.json'
 import type { UserConfig } from '~/types'
+import siteSettings from '../content/site-settings.json'
 
 export const userConfig: Partial<UserConfig> = {
   site: {

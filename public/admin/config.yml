@@ -13,19 +13,19 @@ collections:
     create: true
     extension: md
     format: frontmatter
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     fields:
-      - { label: 제목, name: title, widget: string }
-      - { label: 발행일, name: pubDate, widget: datetime, format: "YYYY-MM-DD", date_format: "YYYY.MM.DD", time_format: false }
+      - {label: 제목, name: title, widget: string}
+      - {label: 발행일, name: pubDate, widget: datetime, format: YYYY-MM-DD, date_format: YYYY.MM.DD, time_format: false}
       - label: 카테고리
         name: categories
         widget: list
-        field: { label: 카테고리, name: category, widget: string }
-      - { label: 임시저장, name: draft, widget: boolean, default: false, required: false }
-      - { label: 요약, name: description, widget: text, required: false }
-      - { label: 대표 이미지, name: banner, widget: image, required: false }
-      - { label: 작성자, name: author, widget: string, required: false }
-      - { label: 본문, name: body, widget: markdown }
+        field: {label: 카테고리, name: category, widget: string}
+      - {label: 임시저장, name: draft, widget: boolean, default: false, required: false}
+      - {label: 요약, name: description, widget: text, required: false}
+      - {label: 대표 이미지, name: banner, widget: image, required: false}
+      - {label: 작성자, name: author, widget: string, required: false}
+      - {label: 본문, name: body, widget: markdown}
 
   - name: settings
     label: 사이트 설정
@@ -34,19 +34,19 @@ collections:
         label: 메인·메뉴 설정
         file: src/content/site-settings.json
         fields:
-          - { label: 헤더, name: title, widget: string }
-          - { label: 메인 소개, name: description, widget: text }
+          - {label: 헤더, name: title, widget: string}
+          - {label: 메인 소개, name: description, widget: text}
           - label: 메뉴
             name: navLinks
             widget: list
-            summary: "{{fields.name}}"
+            summary: '{{fields.name}}'
             fields:
-              - { label: 메뉴명, name: name, widget: string }
-              - { label: 링크, name: href, widget: string }
+              - {label: 메뉴명, name: name, widget: string}
+              - {label: 링크, name: href, widget: string}
           - label: 소셜 링크
             name: socialLinks
             widget: list
-            summary: "{{fields.name}}"
+            summary: '{{fields.name}}'
             fields:
-              - { label: 아이콘 이름, name: name, widget: string, hint: "예: github, rss" }
-              - { label: 링크, name: href, widget: string }
+              - {label: 아이콘 이름, name: name, widget: string, hint: '예: github, rss'}
+              - {label: 링크, name: href, widget: string}

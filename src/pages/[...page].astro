@@ -40,17 +40,15 @@ const introParagraphs = themeConfig.site.description.split('\n\n')
   {
     isFirstPage && (
       <section class="site-intro">
-        {introParagraphs.map((paragraph) => <p>{paragraph}</p>)}
+        {introParagraphs.map((paragraph) => (
+          <p>{paragraph}</p>
+        ))}
       </section>
     )
   }
 
   <section class="writer-post-list">
-    {
-      page.data.map((post) => (
-        <LayoutPost post={post} mode="list" />
-      ))
-    }
+    {page.data.map((post) => <LayoutPost post={post} mode="list" />)}
   </section>
   {
     page.lastPage > 1 && (
