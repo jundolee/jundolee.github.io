@@ -7,5 +7,6 @@ export default antfu({
   ignores: [
     'dist/**',
     'public/previews/**',
+    'src/content/**',
   ],
 })
