@@ -20,6 +20,7 @@ collections:
       - label: 카테고리
         name: categories
         widget: list
+        required: false
         field: {label: 카테고리, name: category, widget: string}
       - {label: 임시저장, name: draft, widget: boolean, default: false, required: false}
       - {label: 요약, name: description, widget: text, required: false}
