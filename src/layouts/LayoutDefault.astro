@@ -5,6 +5,7 @@ import SiteTitle from '~/components/SiteTitle.astro'
 import SiteSeo from '~/components/SiteSeo.astro'
 import LaTeX from '~/components/LaTeX.astro'
 import Analytics from '~/components/Analytics.astro'
+import AnalyticsNoScript from '~/components/AnalyticsNoScript.astro'
 import ThemeScript from '~/components/ThemeScript.astro'
 import '~/styles/fonts.css'
 import '~/styles/global.css'
@@ -43,6 +44,7 @@ const isPost = Astro.url.pathname.startsWith('/posts/')
   </head>
 
   <body>
+    <AnalyticsNoScript />
     <div class:list={['site-shell', { 'site-shell--post': isPost }]}>
       {
         isPost ? (

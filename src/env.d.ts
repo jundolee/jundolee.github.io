@@ -8,6 +8,8 @@ declare namespace App {
 
 interface ImportMetaEnv {
   readonly PUBLIC_GOOGLE_ANALYTICS_ID: string
+  readonly PUBLIC_GOOGLE_TAG_MANAGER_ID: string
+  readonly PUBLIC_GOOGLE_SEARCH_CONSOLE_VERIFICATION_ID: string
   readonly PUBLIC_UMAMI_ANALYTICS_ID: string
 }
 

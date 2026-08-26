@@ -16,4 +16,8 @@ export const userConfig: Partial<UserConfig> = {
   seo: {
     twitter: '',
   },
+  analytics: {
+    googleAnalyticsId: 'G-XZSFNTLMN3',
+    googleTagManagerId: 'GTM-MWTLKV3Q',
+  },
 }

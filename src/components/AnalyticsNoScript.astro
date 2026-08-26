@@ -1,0 +1,9 @@
+---
+import GoogleTagManagerNoScript from '~/components/analytics/GoogleTagManagerNoScript.astro'
+import { themeConfig } from '~/.config'
+
+const PUBLIC_GOOGLE_TAG_MANAGER_ID = import.meta.env.PUBLIC_GOOGLE_TAG_MANAGER_ID
+const googleTagManagerId = themeConfig.analytics.googleTagManagerId || PUBLIC_GOOGLE_TAG_MANAGER_ID
+---
+
+{googleTagManagerId && <GoogleTagManagerNoScript id={googleTagManagerId} />}

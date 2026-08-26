@@ -84,6 +84,8 @@ export const defaultConfig: ThemeConfig = {
   },
   analytics: {
     googleAnalyticsId: '',
+    googleTagManagerId: '',
+    googleSearchConsoleVerificationId: '',
     umamiAnalyticsId: '',
   },
   latex: {

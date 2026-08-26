@@ -4,21 +4,21 @@ interface Props {
 }
 
 const { id } = Astro.props
-
-const gtagUrl = `https://www.googletagmanager.com/gtag/js?id=${id}`
+const gtmUrl = `https://www.googletagmanager.com/gtm.js?id=${id}`
 ---
 
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script is:inline async src={gtagUrl}></script>
-<script is:inline define:vars={{ id }}>
+<!-- Google Tag Manager -->
+<script is:inline>
   window.dataLayer = window.dataLayer || []
-  function gtag() {
-    // eslint-disable-next-line prefer-rest-params
-    dataLayer.push(arguments)
-  }
-  gtag('js', new Date())
-  gtag('config', id)
-
+  window.dataLayer.push({
+    'gtm.start': new Date().getTime(),
+    // eslint-disable-next-line style/quote-props
+    event: 'gtm.js',
+  })
+</script>
+<script is:inline async src={gtmUrl}></script>
+<!-- End Google Tag Manager -->
+<script is:inline>
   let lastPageLocation = window.location.href
   document.addEventListener('swup:page:view', () => {
     const pageLocation = window.location.href
@@ -27,7 +27,8 @@ const gtagUrl = `https://www.googletagmanager.com/gtag/js?id=${id}`
     }
 
     lastPageLocation = pageLocation
-    gtag('event', 'page_view', {
+    window.dataLayer.push({
+      event: 'page_view',
       page_title: document.title,
       page_location: pageLocation,
       page_path: window.location.pathname,

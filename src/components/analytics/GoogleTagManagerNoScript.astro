@@ -1,0 +1,14 @@
+---
+interface Props {
+  id: string
+}
+
+const { id } = Astro.props
+const gtmNoScriptUrl = `https://www.googletagmanager.com/ns.html?id=${id}`
+---
+
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+  <iframe src={gtmNoScriptUrl} height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->

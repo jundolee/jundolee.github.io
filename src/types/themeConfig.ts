@@ -71,6 +71,10 @@ export interface ConfigRSS {
 export interface ConfigAnalytics {
   /** google analytics */
   googleAnalyticsId: string
+  /** google tag manager */
+  googleTagManagerId: string
+  /** google search console HTML verification token */
+  googleSearchConsoleVerificationId: string
   umamiAnalyticsId: string
 }
 

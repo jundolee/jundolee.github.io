@@ -1,14 +1,30 @@
 ---
 import GoogleAnalytics from '~/components/analytics/GoogleAnalytics.astro'
+import GoogleSearchConsole from '~/components/analytics/GoogleSearchConsole.astro'
+import GoogleTagManager from '~/components/analytics/GoogleTagManager.astro'
 import UmamiAnalytics from '~/components/analytics/UmamiAnalytics.astro'
 import { themeConfig } from '~/.config'
 
 const PUBLIC_GOOGLE_ANALYTICS_ID = import.meta.env.PUBLIC_GOOGLE_ANALYTICS_ID
 const googleAnalyticsId = themeConfig.analytics.googleAnalyticsId || PUBLIC_GOOGLE_ANALYTICS_ID
 
+const PUBLIC_GOOGLE_TAG_MANAGER_ID = import.meta.env.PUBLIC_GOOGLE_TAG_MANAGER_ID
+const googleTagManagerId = themeConfig.analytics.googleTagManagerId || PUBLIC_GOOGLE_TAG_MANAGER_ID
+
+const PUBLIC_GOOGLE_SEARCH_CONSOLE_VERIFICATION_ID = import.meta.env.PUBLIC_GOOGLE_SEARCH_CONSOLE_VERIFICATION_ID
+const googleSearchConsoleVerificationId =
+  themeConfig.analytics.googleSearchConsoleVerificationId || PUBLIC_GOOGLE_SEARCH_CONSOLE_VERIFICATION_ID
+
 const PUBLIC_UMAMI_ANALYTICS_ID = import.meta.env.PUBLIC_UMAMI_ANALYTICS_ID
 const umamiAnalyticsId = themeConfig.analytics.umamiAnalyticsId || PUBLIC_UMAMI_ANALYTICS_ID
 ---
 
-{googleAnalyticsId && <GoogleAnalytics id={googleAnalyticsId} />}
+{
+  googleTagManagerId ? (
+    <GoogleTagManager id={googleTagManagerId} />
+  ) : (
+    googleAnalyticsId && <GoogleAnalytics id={googleAnalyticsId} />
+  )
+}
+{googleSearchConsoleVerificationId && <GoogleSearchConsole id={googleSearchConsoleVerificationId} />}
 {umamiAnalyticsId && <UmamiAnalytics id={umamiAnalyticsId} />}
