@@ -8,7 +8,7 @@ const gtmUrl = `https://www.googletagmanager.com/gtm.js?id=${id}`
 ---
 
 <!-- Google Tag Manager -->
-<script is:inline>
+<script is:inline data-swup-ignore-script>
   window.dataLayer = window.dataLayer || []
   window.dataLayer.push({
     'gtm.start': new Date().getTime(),
@@ -16,9 +16,9 @@ const gtmUrl = `https://www.googletagmanager.com/gtm.js?id=${id}`
     event: 'gtm.js',
   })
 </script>
-<script is:inline async src={gtmUrl}></script>
+<script is:inline async data-swup-ignore-script src={gtmUrl}></script>
 <!-- End Google Tag Manager -->
-<script is:inline>
+<script is:inline data-swup-ignore-script>
   let lastPageLocation = window.location.href
   document.addEventListener('swup:page:view', () => {
     const pageLocation = window.location.href
