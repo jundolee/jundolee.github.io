@@ -1,0 +1,70 @@
+---
+import { themeConfig } from '~/.config'
+import { getCategories, getPathFromCategory } from '~/utils'
+
+const categoryMap = await getCategories()
+const categories = Array.from(categoryMap.keys()).map((name) => ({
+  name,
+  href: `/categories/${encodeURIComponent(getPathFromCategory(name, themeConfig.site.categoryMap))}`,
+}))
+---
+
+{
+  categories.length > 0 && (
+    <nav class="home-category-menu" aria-label="카테고리">
+      <ul class="home-category-menu-list">
+        {categories.map(({ name, href }) => (
+          <li>
+            <a href={href}>{name}</a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  )
+}
+
+<style>
+  .home-category-menu {
+    margin: 0 0 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  .home-category-menu-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .home-category-menu-list li {
+    overflow-wrap: anywhere;
+  }
+
+  .home-category-menu-list a {
+    display: inline-block;
+    padding: 0.25rem 0.4rem;
+    margin: -0.25rem -0.4rem;
+    color: var(--writer-text);
+    text-decoration: none;
+  }
+
+  .home-category-menu-list a:hover,
+  .home-category-menu-list a:focus-visible {
+    color: var(--writer-text);
+    text-decoration: none;
+  }
+
+  .home-category-menu a:focus-visible {
+    outline: 1px solid var(--writer-link);
+    outline-offset: 3px;
+  }
+
+  @media (max-width: 480px) {
+    .home-category-menu-list {
+      gap: 0.35rem 0.75rem;
+    }
+  }
+</style>

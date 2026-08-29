@@ -1,6 +1,7 @@
 ---
 import type { GetStaticPaths, InferGetStaticPropsType } from 'astro'
 import { themeConfig } from '~/.config'
+import CategoryMenu from '~/components/CategoryMenu.astro'
 import Pagination from '~/components/Pagination.astro'
 import SiteSeo from '~/components/SiteSeo.astro'
 import LayoutDefault from '~/layouts/LayoutDefault.astro'
@@ -47,6 +48,7 @@ const introParagraphs = themeConfig.site.description.split('\n\n')
     )
   }
 
+  {isFirstPage && <CategoryMenu />}
   <section class="writer-post-list">
     {page.data.map((post) => <LayoutPost post={post} mode="list" />)}
   </section>
