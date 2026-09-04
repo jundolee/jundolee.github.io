@@ -1,0 +1,39 @@
+<aside class="post-subscribe" aria-label="새 글 구독">
+  <p>다음 글도 함께 읽고 싶다면</p>
+  <a href="/atom.xml" data-swup-ignore>RSS로 새 글 구독하기</a>
+  <p>RSS 리더에 이 링크를 추가하면 새 글을 받아볼 수 있습니다.</p>
+</aside>
+
+<style>
+  .post-subscribe {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--writer-border-muted);
+  }
+
+  .post-subscribe p {
+    margin: 0;
+    font-size: 0.875rem;
+    line-height: 1.65;
+    overflow-wrap: anywhere;
+  }
+
+  .post-subscribe a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--writer-text);
+    font-size: 0.875rem;
+    text-decoration: none;
+  }
+
+  .post-subscribe a:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .post-subscribe a:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+  }
+</style>
