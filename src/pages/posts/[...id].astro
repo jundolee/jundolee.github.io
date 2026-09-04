@@ -1,6 +1,7 @@
 ---
 import type { GetStaticPaths, InferGetStaticPropsType } from 'astro'
 import Comments from '~/components/Comments.astro'
+import PostSubscribe from '~/components/PostSubscribe.astro'
 import Pagination from '~/components/Pagination.astro'
 import SiteSeo from '~/components/SiteSeo.astro'
 import LayoutDefault from '~/layouts/LayoutDefault.astro'
@@ -43,6 +44,7 @@ function getUrl(id: string) {
 
   <LayoutPost post={entry} mode="detail">
     <Content />
+    <PostSubscribe />
   </LayoutPost>
 
   <Pagination
