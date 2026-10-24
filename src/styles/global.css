@@ -226,10 +226,10 @@ a {
   object-fit: cover;
 }
 .writer-article :where(p, li) {
-  margin: 1.5rem 0;
+  margin: 1rem 0;
   font: inherit;
   font-size: 1rem;
-  line-height: 1.65;
+  line-height: 1.55;
 }
 .writer-article :where(h1, h2, h3, h4, h5, h6) {
   margin: 3rem 0 1.5rem;
@@ -330,15 +330,10 @@ a {
   color: inherit;
 }
 .writer-article :where(hr) {
-  margin: 3rem 0;
-  height: auto;
+  width: 3rem;
+  margin: 2rem auto;
   border: 0;
-  text-align: center;
-}
-.writer-article :where(hr)::before {
-  content: '***';
-  color: var(--writer-muted);
-  letter-spacing: 0.25em;
+  border-top: 1px solid var(--writer-border-muted);
 }
 
 .site-footer {
